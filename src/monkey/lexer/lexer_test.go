@@ -60,10 +60,10 @@ let result = add(five, ten);
 		{token.EOF, ""},
 	}
 
-	l := New(input)
+	lexer := New(input)
 
 	for i, tt := range tests {
-		tok := l.NextToken()
+		tok := lexer.NextToken()
 
 		if tok.Type != tt.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q",
